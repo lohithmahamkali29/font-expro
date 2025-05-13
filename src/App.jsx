@@ -33,6 +33,21 @@ const setBackgroundImage = () => {
   contentRef.current.style.backgroundSize = 'cover';
   contentRef.current.style.backgroundPosition = 'center';
 }
+const reset = () => {
+  if (contentRef.current) {
+    contentRef.current.style.color = 'black';
+    contentRef.current.style.backgroundColor = 'white';
+    contentRef.current.style.backgroundImage = '';
+    contentRef.current.style.fontFamily = 'initial';
+    contentRef.current.innerText = 'enter the content';
+
+    // Optional: Remove selected class from color buttons
+    document.querySelectorAll('button.color-selected').forEach(btn => {
+      btn.classList.remove('color-selected');
+    });
+  }
+}
+
 
   return (
 
@@ -45,7 +60,9 @@ const setBackgroundImage = () => {
   
   <div className = "child1">
     <h1 contentEditable = "True" id = 'content'ref={contentRef}>enter the content</h1>
-    <button id="down" onClick={() => downloadImage()}>download</button>
+    <div id = 'but'><button id="down" onClick={() => downloadImage()}>download</button>
+   <button id="down" onClick={reset}>Reset</button></div>
+   
 
   </div>
  <div id = 'child2'>
