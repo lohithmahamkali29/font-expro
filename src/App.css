@@ -1,169 +1,139 @@
-#heading{
 
+#heading {
   color: red;
   text-shadow: 3px 3px 5px black, 5px 5px 2px blue, 3px 3px 1px navy;
-  font-size: 62px;
+  font-size: 8vw;
   text-align: center;
-
+  margin-bottom: 20px;
 }
-.heading{
+
+.heading {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#content{
-  height: 500px;
-  width: 500px;
-  border: 1px solid black;
-  text-align: center;
-  vertical-align: center;
-}
-.child1{
+/* === Layout Container === */
+#parent {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
-  flex-direction: column;
-  padding-left: 20px;
-  row-gap: 5px;
-  flex-wrap: wrap;
+  padding: 20px;
+  border: 5px solid orange;
+}
 
+/* === Editable Text Block === */
+#content {
+  min-height: 200px;
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid black;
+  text-align: center;
+  padding: 10px;
+  overflow-wrap: break-word;
+}
 
-}
-#child2{
-  display:flex;
-  flex-direction: column;
-  row-gap: 20px;
-  flex-wrap: wrap;
-  
-}
-#down{
-  height:35px;
-  cursor: pointer;
- width:fit-content;
- border: none;
- font-size:20px;
- font-weight: 600; 
- background-color: coral;
- color: green;
- border-radius: 12px;
- cursor: pointer;
- padding: 2px 5px 2px 5px;
- 
-}
-#parent{
+.child1 {
   display: flex;
-  column-gap: 30px;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  row-gap: 40px;
-   border: 20px solid orange;
-  padding: 10px;
-   box-sizing: border-box;
+  gap: 10px;
 }
-/* #text-color,#bg-color,#fonts{
-height: 60px;
-background-color: red;
-} */
 
-#red{
-  height: 45px;
-  width: 45px;
-  background-color: red;
-  border: none ;
+/* === Button Styling === */
+#down {
+  height: 40px;
+  padding: 5px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: coral;
+  color: green;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
 }
 
-#green{
-  height: 45px;
-  width: 45px;
-  background-color: green;
-  border: none ;
-  cursor: pointer;
-}
-
-#blue{
-  height: 45px;
-  width: 45px;
-  background-color: blue;
-  border: none ;
-  cursor: pointer;
-}
-
-#yellow{
-  height: 45px;
-  width: 45px;
-  background-color: yellow;
-  border: none ;
-  cursor: pointer;
-}
-
-#purple{
-  height: 45px;
-  width: 45px;
-  background-color: purple;
-  border: none ;
-  cursor: pointer;
-}
-
-#coll{
-display:flex;
-column-gap: 10px;
-flex-wrap: wrap;
-border: 20px solid grey;
-padding: 10px;
-
-
-}
-#bcoll{
-  display:flex;
-  column-gap: 10px;
-  flex-wrap: wrap;
-  border: 20px solid grey;
-  padding: 10px;
-  
-  }
-  #subheading{
-    font-size: 30px;
-    color: cadetblue;
-  }
-
-
-  #fonts {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    align-items: center;
-    border: 20px solid grey;
-  padding: 10px;
-}
-
+/* === Color Pickers === */
+#coll,
+#bcoll,
 #fcoll {
-    display: flex;
-    column-gap: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
 }
 
-#fonts button {
-    height: 35px;
-    width: fit-content;
-    padding: 5px 10px;
-    border: none;
-    background-color: teal;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+#child2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+/* === Buttons for Colors === */
+#red, #green, #blue, #yellow, #purple {
+  height: 40px;
+  width: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+/* === Subheadings === */
+#subheading {
+  font-size: 22px;
+  color: cadetblue;
+  text-align: center;
+}
+
+/* === Fonts Section === */
+#fonts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border: 5px solid grey;
+  padding: 10px;
+}
+
+#fonts button,
+#fonts select {
+  height: 35px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 #fonts select {
-    height: 35px;
-    border: 1px solid teal;
-    border-radius: 8px;
-    padding: 5px;
-    font-size: 16px;
+  border: 1px solid teal;
+  background-color: white;
+  color: black;
 }
 
+/* === Media Query for Mobile === */
+@media screen and (max-width: 600px) {
+  #heading {
+    font-size: 10vw;
+  }
 
+  #content {
+    width: 90vw;
+  }
 
+  #down {
+    width: 80%;
+  }
+
+  #fonts button,
+  #fonts select {
+    width: 100%;
+    text-align: center;
+  }
+}
